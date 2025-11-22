@@ -15,7 +15,7 @@ let player = {
     inventory: { iron: 0, copper: 0, factory: 0, upgrader: 0, generator: 0 }
 };
 let score = 0;
-let upgraderPower = 1;
+let upgraderPower = 2;
 let upgraderPowerCost = 100;
 
 let grid = new Map(); // Grid buildings
@@ -26,7 +26,7 @@ let generatedChunks = new Set(); // To track generated chunks
 // Game Constants
 const TILE_SIZE = 48;
 const CHUNK_SIZE = 16;
-const PLAYER_SPEED = 5.0; // INCREASED PLAYER SPEED from 2.5 to 5.0
+const PLAYER_SPEED = 3.5; // INCREASED PLAYER SPEED from 2.5 to 5.0
 const GAME_TICK_RATE = 1000;
 
 // Utility
@@ -71,7 +71,7 @@ const joystickKnob = document.getElementById('joystick-knob');
  */
 function initGameDefaults() {
     score = 0;
-    upgraderPower = 1;
+    upgraderPower = 2;
     upgraderPowerCost = 100;
     grid = new Map();
     items = [];
