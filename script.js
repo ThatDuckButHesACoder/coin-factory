@@ -26,7 +26,7 @@ let generatedChunks = new Set(); // To track generated chunks
 // Game Constants
 const TILE_SIZE = 48;
 const CHUNK_SIZE = 16;
-const PLAYER_SPEED = 3.5; // INCREASED PLAYER SPEED from 2.5 to 5.0
+const PLAYER_SPEED = 2.5; // INCREASED PLAYER SPEED from 2.5 to 5.0
 const GAME_TICK_RATE = 1000;
 
 // Utility
