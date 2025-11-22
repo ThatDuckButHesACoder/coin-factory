@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Coin Factory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        Loading Factory Data...
+    </div>
+
+    <canvas id="game-canvas"></canvas>
+
+    <div class="ui-container">
+        <!-- Top Bar -->
+        <div id="top-bar">
+            <div id="score-display">💰 Score: 0</div>
+            <div class="inventory-items">
+                <span class="inventory-item" id="iron-display">⛏️ Iron: 0</span>
+                <span class="inventory-item" id="copper-display">🟠 Copper: 0</span>
+                <span class="inventory-item" id="factory-display">🏭 Factory: 0</span>
+                <span class="inventory-item" id="upgrader-display">🔼 Upgrader: 0</span>
+                <span class="inventory-item" id="generator-display">⚙️ Gen: 0</span>
+            </div>
+        </div>
+
+        <!-- Build Menu -->
+        <div id="build-menu">
+            <button class="build-button" data-type="conveyor" title="Conveyor (Rotatable)">⬆️</button>
+            <button class="build-button" data-type="factory" title="Factory (Crafted)">🏭</button>
+            <button class="build-button" data-type="upgrader" title="Upgrader (Rotatable)">🔼</button>
+            <button class="build-button" data-type="generator" title="Generator (Crafted)">⚙️</button>
+            <button class="build-button" data-type="collector" title="Collector (Free)">💲</button>
+            <button class="build-button" data-type="rotate" title="Rotate">🔄</button>
+            <button class="build-button" data-type="mine" title="Mine">⛏️</button>
+            <button class="build-button" data-type="remove" title="Remove">❌</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div id="action-buttons">
+            <button class="action-button" id="shop-button" title="Shop">🛒</button>
+            <button class="action-button" id="craft-button" title="Craft">🛠️</button>
+        </div>
+
+        <!-- Joystick -->
+        <div id="joystick-area">
+            <div id="joystick-knob"></div>
+        </div>
+    </div>
+    
+    <!-- Crafting Modal -->
+    <div id="craft-modal">
+        <div id="craft-content">
+            <h2>Crafting</h2>
+            <div class="craft-recipe">
+                <div class="craft-info">
+                    <strong>🏭 Factory</strong>
+                    <span>5 Iron, 2 Copper</span>
+                </div>
+                <button class="craft-button" data-recipe="factory">Craft</button>
+            </div>
+            <div class="craft-recipe">
+                <div class="craft-info">
+                    <strong>🔼 Upgrader</strong>
+                    <span>10 Iron, 5 Copper</span>
+                </div>
+                <button class="craft-button" data-recipe="upgrader">Craft</button>
+            </div>
+            <div class="craft-recipe">
+                <div class="craft-info">
+                    <strong>⚙️ Generator</strong>
+                    <span>20 Iron, 10 Copper</span>
+                </div>
+                <button class="craft-button" data-recipe="generator">Craft</button>
+            </div>
+            <button id="close-modal">Close</button>
+        </div>
+    </div>
+
+    <!-- Shop Modal -->
+    <div id="shop-modal-backdrop" style="display: none;"> 
+        <div id="craft-content"> 
+            <h2>Upgrade Shop</h2>
+            <div class="craft-recipe">
+                <div class="craft-info">
+                    <strong>Upgrader Power</strong>
+                    <span id="upgrader-power-display">Current: +1</span>
+                </div>
+                <button class="craft-button" id="upgrade-power-button">
+                    Cost: <span id="upgrader-cost-display">100</span>
+                </button>
+            </div>
+            <button id="close-shop-modal" class="close-modal-button">Close</button>
+        </div>
+    </div>
+
+    <!-- Message Box -->
+    <div id="message-box"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
